@@ -1,0 +1,64 @@
+.outer-div {
+  margin-top: 10px;
+  padding: 10px;
+  width: 350px;
+  border-radius: 10px;
+}
+
+.Card {
+  margin-top: 25px;
+  border-bottom: 2px solid rgb(234, 234, 234);
+  font-family: "Open Sans", sans-serif;
+}
+
+.Card > img {
+  height: 200px;
+  width: 100%;
+  margin-top: -20px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.alignH2 {
+  margin: 8px;
+  margin-bottom: -15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#star {
+  border-radius: 8px;
+  padding-left: 8px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.alignH2 > h2 {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.alignH3 {
+  margin: 8px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.alignH3 > h3 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.outer-div:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.alignH2 > h2,
+.alignH3 > h3 {
+  color: black;
+  text-decoration: none;
+}

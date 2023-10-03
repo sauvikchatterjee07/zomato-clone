@@ -1,0 +1,23 @@
+.menu-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+}
+.menu-heading {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: bisque;
+  border-radius: 5px;
+}
+
+.menu-items {
+  margin-top: 20px;
+  padding: 10px;
+  list-style-type: none;
+  font-weight: 400;
+  background-color: rgb(209, 209, 209);
+  border-radius: 5px;
+}

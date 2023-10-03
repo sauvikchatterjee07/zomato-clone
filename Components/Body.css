@@ -1,0 +1,40 @@
+/* .restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} */
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.restaurant-list::after {
+  content: "";
+  flex-grow: 9999;
+  min-width: 200px;
+}
+
+.no-matches-found {
+  font-family: "Open Sans", sans-serif;
+  font-size: larger;
+  width: 100%;
+  text-align: center;
+}
+
+.restaurant-menu-details {
+  text-decoration: none;
+}
+.make-content-center {
+  display: flex;
+}
+
+.left-blank {
+  width: 40%;
+}
+.right-blank {
+  width: 40%;
+}
