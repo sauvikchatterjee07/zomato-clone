@@ -2,52 +2,65 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-import "./restaurantmenu.css";
+import "./Restaurantmenu.css";
 
 const RestaurantMenu = () => {
   const [restaurantMenu, setRestaurantMenu] = useState([]);
-  const [biryanis, setBiryanis] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [cardZeroData, setCardZeroData] = useState(null);
   const { resid } = useParams();
 
   const getMenuDetails = async () => {
-    const response = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2296337&lng=87.8758417&restaurantId=" +
-        resid +
-        "&catalog_qa=undefined&submitAction=ENTER"
-    );
-    const json = await response.json();
-    const data = json.data;
-    const biryaniItems =
-      data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
-        ?.itemCards || [];
-    setRestaurantMenu(data);
-    setBiryanis(biryaniItems);
-    setIsLoading(false);
+    try {
+      const response = await fetch(
+        "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2296337&lng=87.8758417&restaurantId=" +
+          resid +
+          "&catalog_qa=undefined&submitAction=ENTER"
+      );
+      const json = await response.json();
+      const data = json.data;
+      // console.log(data.cards[0]?.card?.card?.info);
+
+      setRestaurantMenu(data);
+      helper(data);
+    } catch (error) {
+      console.error("Error fetching menu details: ", error);
+    }
   };
 
   useEffect(() => {
     getMenuDetails();
   }, []);
 
-  return isLoading ? (
-    <Shimmer />
-  ) : (
-    <>
-      <div className="menu-main">
-        <h1 className="menu-heading">
-          Menu of {restaurantMenu.cards[0].card.card.info.name}{" "}
-        </h1>
-        <ul className="menu-items">
-          {biryanis.map((item, index) => (
-            <li key={index}>
-              {item.card.info.name}
-              &nbsp;&nbsp;&nbsp; ₹ {item.card.info.price / 100}
-            </li>
-          ))}
-        </ul>
+  const helper = (data) => {
+    console.log(data.cards[0]?.card?.card?.info);
+    setCardZeroData(data.cards[0]?.card?.card?.info);
+  };
+
+  return !cardZeroData ? (
+    <div className="make-content-center">
+      <div className="card-content">
+        <Shimmer />
       </div>
-    </>
+    </div>
+  ) : (
+    <div className="make-content-center">
+      <div className="card-content">
+        <div className="restaurant-details-top-left">
+          <h1>{cardZeroData.name}</h1>
+          {cardZeroData.cuisines.map((cuisine) => (
+            <div>
+              <h2>{cuisine}</h2>
+            </div>
+          ))}
+          <h2>{cardZeroData.areaName}</h2>
+          <h2>{cardZeroData.feeDetails.message}</h2>
+        </div>
+        <div className="restaurant-details-top-right">
+          <h3>⭐{" " + cardZeroData.avgRatingString}</h3>
+          <h3>{cardZeroData.totalRatingsString}</h3>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -24,7 +24,7 @@ const Body = () => {
       const json = await data.json();
       let card5Data =
         json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants;
-      console.log(card5Data);
+      // console.log(card5Data);
       setRestaurants(card5Data);
       setTempListOfResturants(card5Data);
       setIsLoading(false);
@@ -46,8 +46,7 @@ const Body = () => {
   return (
     <>
       <div className="make-content-center">
-        <div className="blank left-blank"></div>
-        <div>
+        <div className="card-content">
           <SearchComponent
             searchInput={searchInput}
             setSearchInput={setSearchInput}
@@ -63,8 +62,8 @@ const Body = () => {
                   className="restaurant-menu-details"
                 >
                   <RestaurantCard
-                    restaurant={restaurant}
                     key={restaurant.info.id}
+                    restaurant={restaurant}
                   />
                 </Link>
               ))
@@ -73,7 +72,6 @@ const Body = () => {
             )}
           </div>
         </div>
-        <div className="blank right-blank"></div>
       </div>
     </>
   );

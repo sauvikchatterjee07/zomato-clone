@@ -4,8 +4,6 @@ import "./shimmer.css";
 const Shimmer = () => {
   return (
     <div className="restaurant-list">
-      {" "}
-      {/* Update the parent class */}
       {Array(9)
         .fill("")
         .map((_, index) => (

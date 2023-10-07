@@ -30,11 +30,8 @@
 }
 .make-content-center {
   display: flex;
+  justify-content: center;
 }
-
-.left-blank {
-  width: 40%;
-}
-.right-blank {
-  width: 40%;
+.card-content {
+  width: 80%;
 }

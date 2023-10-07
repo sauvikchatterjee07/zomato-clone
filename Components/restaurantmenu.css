@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "Open Sans", sans-serif;
   width: 100%;
 }
 .menu-heading {
@@ -20,4 +19,20 @@
   font-weight: 400;
   background-color: rgb(209, 209, 209);
   border-radius: 5px;
+}
+
+.make-content-center {
+  display: flex;
+  justify-content: center;
+}
+.card-content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.restaurant-details-top-left {
+  font-size: small;
+  color: gray;
+  font-weight: 400;
 }
