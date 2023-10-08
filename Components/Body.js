@@ -46,7 +46,7 @@ const Body = () => {
   return (
     <>
       <div className="make-content-center">
-        <div className="card-content">
+        <div className="card-contents">
           <SearchComponent
             searchInput={searchInput}
             setSearchInput={setSearchInput}

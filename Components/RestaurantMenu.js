@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import Recommended from "./Recommended";
+import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 import "./Restaurantmenu.css";
 
 const RestaurantMenu = () => {
   const [restaurantMenu, setRestaurantMenu] = useState([]);
   const [cardZeroData, setCardZeroData] = useState(null);
+  const [recommended, setRecommended] = useState(null);
   const { resid } = useParams();
 
   const getMenuDetails = async () => {
@@ -32,33 +33,47 @@ const RestaurantMenu = () => {
   }, []);
 
   const helper = (data) => {
-    console.log(data.cards[0]?.card?.card?.info);
+    // console.log(data.cards[0]?.card?.card?.info);
     setCardZeroData(data.cards[0]?.card?.card?.info);
+    setRecommended(data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards[1]);
+    // console.log(data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards[1]);
   };
 
   return !cardZeroData ? (
     <div className="make-content-center">
       <div className="card-content">
-        <Shimmer />
+        <RestaurantMenuShimmer />
       </div>
     </div>
   ) : (
     <div className="make-content-center">
       <div className="card-content">
-        <div className="restaurant-details-top-left">
-          <h1>{cardZeroData.name}</h1>
-          {cardZeroData.cuisines.map((cuisine) => (
-            <div>
-              <h2>{cuisine}</h2>
+        <div className="restaurant-details">
+          <div className="restaurant-details-top-left">
+            <h1 id="restaurant-name">{cardZeroData.name}</h1>
+            <h2 className="h2 cuisine-names">
+              {cardZeroData.cuisines.join(", ")}
+            </h2>
+            <h2 className="h2 area-name">{cardZeroData.areaName}</h2>
+            <h2 className="h2 message">{cardZeroData.feeDetails.message}</h2>
+          </div>
+          <div className="restaurant-details-top-right">
+            <div className="top-right-content">
+              <div className="avg-star-rating-box">
+                <h3 className="star-box-avgstar-rating">
+                  ⭐{" " + cardZeroData.avgRatingString}
+                </h3>
+              </div>
+              <h3 className="star-box-total-rating">
+                {cardZeroData.totalRatingsString}
+              </h3>
             </div>
-          ))}
-          <h2>{cardZeroData.areaName}</h2>
-          <h2>{cardZeroData.feeDetails.message}</h2>
+          </div>
         </div>
-        <div className="restaurant-details-top-right">
-          <h3>⭐{" " + cardZeroData.avgRatingString}</h3>
-          <h3>{cardZeroData.totalRatingsString}</h3>
-        </div>
+
+        <hr id="hr" />
+
+        <Recommended recommended={recommended} />
       </div>
     </div>
   );

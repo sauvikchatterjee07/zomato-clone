@@ -1,0 +1,68 @@
+/* .recommended-section {
+  border: 2px solid red;
+} */
+
+.main-section {
+  height: 150px;
+}
+
+.main-section-content {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(235, 235, 235);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.main-section-left {
+  max-width: 80%;
+}
+
+.main-section-right {
+  margin: 5px;
+  height: 96px;
+  width: 118px;
+  position: relative;
+}
+
+.main-section-right img {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.recommended {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: large;
+  font-weight: bold;
+  color: rgb(58, 58, 58);
+}
+
+.dish-name,
+.dish-description,
+.dish-price {
+  font-size: large;
+  font-weight: unset;
+  color: rgb(58, 58, 58);
+}
+.dish-description {
+  /* max-width: 95%; */
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(160, 160, 160);
+  /* overflow: hidden; */
+}
+
+/* .image-container {
+  position: relative;
+} */
+
+.add-to-cart-container {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -32,6 +32,8 @@
   display: flex;
   justify-content: center;
 }
-.card-content {
+.card-contents {
+  display: flex;
+  flex-direction: column;
   width: 80%;
 }

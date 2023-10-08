@@ -25,9 +25,16 @@
   display: flex;
   justify-content: center;
 }
+
 .card-content {
-  width: 80%;
+  width: 50%;
+}
+
+.restaurant-details {
+  margin-top: 50px;
+  margin-bottom: 20px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -35,4 +42,64 @@
   font-size: small;
   color: gray;
   font-weight: 400;
+}
+
+.message {
+  margin-top: 15px;
+}
+
+.restaurant-details-top-right {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  color: gray;
+  font-weight: 400;
+}
+
+.top-right-content {
+  padding: 2px;
+  border: 2px solid rgb(212, 212, 212);
+  border-radius: 5px;
+}
+
+#restaurant-name {
+  color: black;
+  font-size: 25;
+  padding-bottom: 10px;
+}
+
+.h2 {
+  font-size: 14;
+  font-weight: 300;
+}
+
+.star-box-total-rating {
+  color: rgb(0, 61, 0);
+  padding: 5px;
+  font-size: 12;
+}
+
+.avg-star-rating-box {
+  display: flex;
+  border-bottom: 2px solid rgb(212, 212, 212);
+  justify-content: center;
+}
+
+.star-box-avgstar-rating {
+  color: rgb(0, 61, 0);
+  font-weight: 900;
+  padding: 5px 5px 5px 0px;
+}
+
+hr {
+  height: 1.5px; /* Set the height of the line */
+  background-image: repeating-linear-gradient(
+    to right,
+    rgb(212, 212, 212),
+    rgb(212, 212, 212) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+  border: none;
+  margin: 10px 0; /* Adjust margin as needed */
 }

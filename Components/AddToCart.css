@@ -1,0 +1,51 @@
+.add-to-cart {
+  height: 35px;
+  width: 95px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #4caf50;
+  cursor: pointer;
+}
+
+.minus,
+.center,
+.plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.center {
+  border-right: none;
+}
+
+/* Hover effect */
+.add-to-cart:hover {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: 1px solid #4caf50;
+  transition: 0.3s;
+}
+
+/* Active effect */
+.add-to-cart:active {
+  background-color: #3e8e41;
+}
+
+.plus {
+  font-size: 18px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.minus {
+  font-size: 24px;
+  line-height: 0.6;
+  vertical-align: middle;
+}
