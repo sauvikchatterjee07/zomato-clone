@@ -1,0 +1,21 @@
+.toggle-button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #555; /* Gray color for the arrow pointing upwards */
+  transition: transform 0.3s ease;
+}
+
+.toggle-button.active .arrow {
+  transform: rotate(180deg); /* Rotate the arrow 180 degrees when active */
+}
