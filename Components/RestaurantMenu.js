@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Recommended from "./Recommended";
+import Dishes from "./Dishes";
 import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 import "./Restaurantmenu.css";
 
 const RestaurantMenu = () => {
   const [restaurantMenu, setRestaurantMenu] = useState([]);
   const [cardZeroData, setCardZeroData] = useState(null);
-  const [recommended, setRecommended] = useState(null);
+  const [dishes, setDishes] = useState(null);
   const { resid } = useParams();
 
   const getMenuDetails = async () => {
@@ -35,8 +35,8 @@ const RestaurantMenu = () => {
   const helper = (data) => {
     // console.log(data.cards[0]?.card?.card?.info);
     setCardZeroData(data.cards[0]?.card?.card?.info);
-    setRecommended(data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards[1]);
-    // console.log(data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards[1]);
+    setDishes(data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards);
+    // console.log(data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards);
   };
 
   return !cardZeroData ? (
@@ -73,7 +73,7 @@ const RestaurantMenu = () => {
 
         <hr id="hr" />
 
-        <Recommended recommended={recommended} />
+        <Dishes dishes={dishes} />
       </div>
     </div>
   );
