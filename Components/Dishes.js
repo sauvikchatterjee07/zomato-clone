@@ -16,7 +16,6 @@ const Dishes = ({ dishes }) => {
           key={index}
           obj={obj}
           isVisible={visibleSection === obj.card?.card?.itemCards}
-          // setIsVisible={() => setVisibleSection(obj.card?.card?.itemCards)}
           toggleVisibility={() => toggleVisibility(obj.card?.card?.itemCards)}
         />
       ))}

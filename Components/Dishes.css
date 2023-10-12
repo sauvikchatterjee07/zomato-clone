@@ -67,13 +67,6 @@
   transform: translateX(-50%);
 }
 
-/* .recommended-section.closed {
-  display: none;
-}
-.recommended-section.open {
-  display: block;
-} */
-
 .top-section {
   display: flex;
   justify-content: space-between;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Arrow.css";
 
 const Arrow = () => {
-  const [isUp, setIsUp] = useState(false);
+  const [isUp, setIsUp] = useState(true);
 
   const toggleArrow = () => {
     setIsUp(!isUp);

@@ -23,7 +23,7 @@ const Body = () => {
       const data = await fetch(API_END_POINT);
       const json = await data.json();
       let card5Data =
-        json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants;
+        json.data.cards[5].card.card.gridElements.infoWithStyle?.restaurants;
       // console.log(card5Data);
       setRestaurants(card5Data);
       setTempListOfResturants(card5Data);

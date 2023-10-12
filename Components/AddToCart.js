@@ -1,17 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addItem,
+  removeItem,
+  selectCardCount,
+  selectItemCount,
+} from "../utils/cartSlice";
 import "./AddToCart.css";
 
-const AddToCart = () => {
-  const [cardCount, setCardCount] = useState(0);
+const AddToCart = ({ item }) => {
+  // const cardCount = useSelector(selectCardCount);
+
+  const itemCount = useSelector(selectItemCount);
+
+  const dispatch = useDispatch();
 
   const handleMinusClick = () => {
-    if (cardCount > 0) {
-      setCardCount(cardCount - 1);
+    if (itemCount[item.card.info.id] > 0) {
+      dispatch(removeItem(item.card.info));
     }
   };
 
   const handlePlusClick = () => {
-    setCardCount(cardCount + 1);
+    dispatch(addItem(item.card.info));
   };
 
   return (
@@ -19,7 +30,7 @@ const AddToCart = () => {
       <div className="minus" onClick={handleMinusClick}>
         -
       </div>
-      <div className="center">{cardCount === 0 ? "Add" : cardCount}</div>
+      <div className="center"> {itemCount[item.card.info.id] || "Add"}</div>
       <div className="plus" onClick={handlePlusClick}>
         +
       </div>

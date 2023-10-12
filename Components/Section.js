@@ -4,7 +4,6 @@ import { IMG_CDN_URL } from "../utils/dummyData";
 import Arrow from "./Arrow";
 import "./Dishes.css";
 
-// const Section = ({ obj, isVisible, setIsVisible }) => {
 const Section = ({ obj, isVisible, toggleVisibility }) => {
   return (
     <>
@@ -14,7 +13,6 @@ const Section = ({ obj, isVisible, toggleVisibility }) => {
             <h1 className="recommended">
               {obj.card?.card?.title} ({obj.card?.card?.itemCards?.length || 0})
             </h1>
-            {/* <div onClick={() => setIsVisible(!isVisible)}> */}
             <div onClick={toggleVisibility}>
               <Arrow />
             </div>
@@ -42,7 +40,7 @@ const Section = ({ obj, isVisible, toggleVisibility }) => {
                         />
                       )}
                       <div className="add-to-cart-container">
-                        <AddToCart />
+                        <AddToCart item={item} />
                       </div>
                     </div>
                   </div>

@@ -12,7 +12,7 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 8px solid #555; /* Gray color for the arrow pointing upwards */
+  border-top: 8px solid #b1b1b1;
   transition: transform 0.3s ease;
 }
 

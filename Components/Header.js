@@ -2,8 +2,12 @@ import React from "react";
 import logo from "../Assets/ZomatoLogo.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import CartItemNumber from "./CartItemNumber";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <>
       <div className="headerElement">
@@ -12,7 +16,10 @@ const Header = () => {
         </Link>
         <ul>
           <Link to="/cart" className="list-items">
-            <li className="list-text">Cart</li>
+            <div className="cart-container">
+              <CartItemNumber itemNumber={cartItems.length} />
+              <li className="list-text">Cart</li>
+            </div>
           </Link>
           <Link to="/about" className="list-items">
             <li className="list-text">About Us</li>
