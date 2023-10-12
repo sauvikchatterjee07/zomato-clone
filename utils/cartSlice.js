@@ -4,12 +4,10 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
-    // cardCount: 0,
   },
   reducers: {
     addItem: (state, action) => {
       state.items.push(action.payload);
-      state.cardCount += 1;
     },
     removeItem: (state, action) => {
       const deleteObjId = action.payload.id;
@@ -20,16 +18,12 @@ const cartSlice = createSlice({
           break;
         }
       }
-      // console.log(newArr);
       state.items = newArr;
-      state.cardCount -= 1;
     },
   },
 });
 
 export const { addItem, removeItem } = cartSlice.actions;
-
-export const selectCardCount = (state) => state.cart.cardCount;
 
 export default cartSlice.reducer;
 

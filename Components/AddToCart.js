@@ -1,16 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addItem,
-  removeItem,
-  selectCardCount,
-  selectItemCount,
-} from "../utils/cartSlice";
+import { addItem, removeItem, selectItemCount } from "../utils/cartSlice";
 import "./AddToCart.css";
 
 const AddToCart = ({ item }) => {
-  // const cardCount = useSelector(selectCardCount);
-
   const itemCount = useSelector(selectItemCount);
 
   const dispatch = useDispatch();
