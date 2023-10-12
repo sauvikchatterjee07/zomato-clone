@@ -11,6 +11,7 @@ import Header from "./Components/Header";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "./utils/Store";
+import "./style.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -55,4 +56,3 @@ const appRouter = createBrowserRouter([
 ]);
 
 root.render(<RouterProvider router={appRouter} />);
-// root.render(<Shimmer />);

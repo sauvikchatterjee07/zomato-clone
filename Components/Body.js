@@ -3,7 +3,7 @@ import { API_END_POINT } from "../utils/dummyData";
 import "./Body.css";
 import RestaurantCard from "./RestaurantCard";
 import SearchComponent from "./SearchComponent";
-import Shimmer from "./Shimmer";
+import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 
 const filteredData = (searchInput, restaurants) => {

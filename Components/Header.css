@@ -4,8 +4,9 @@
   overflow: hidden;
   background-color: rgb(227, 52, 66);
   box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
-  /* position: sticky;
-  top: 0; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .headerElement > ul {
@@ -43,4 +44,9 @@
 
 .cart-container {
   display: flex;
+}
+
+.list-text {
+  display: flex;
+  gap: 5px;
 }

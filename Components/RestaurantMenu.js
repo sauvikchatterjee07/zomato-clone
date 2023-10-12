@@ -19,7 +19,6 @@ const RestaurantMenu = () => {
       );
       const json = await response.json();
       const data = json.data;
-      // console.log(data.cards[0]?.card?.card?.info);
 
       setRestaurantMenu(data);
       helper(data);
@@ -33,10 +32,8 @@ const RestaurantMenu = () => {
   }, []);
 
   const helper = (data) => {
-    // console.log(data.cards[0]?.card?.card?.info);
     setCardZeroData(data.cards[0]?.card?.card?.info);
     setDishes(data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards);
-    // console.log(data.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards);
   };
 
   return !cardZeroData ? (

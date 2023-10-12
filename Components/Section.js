@@ -3,6 +3,7 @@ import AddToCart from "./AddToCart";
 import { IMG_CDN_URL } from "../utils/dummyData";
 import Arrow from "./Arrow";
 import "./Dishes.css";
+import logo from "../Assets/ZomatoLogo.png";
 
 const Section = ({ obj, isVisible, toggleVisibility }) => {
   return (
@@ -32,7 +33,13 @@ const Section = ({ obj, isVisible, toggleVisibility }) => {
                       </p>
                     </div>
                     <div className="main-section-right">
-                      {item.card.info.imageId && (
+                      {!item.card.info.imageId ? (
+                        <img
+                          src={logo}
+                          className="image"
+                          alt={item.card.info.name}
+                        />
+                      ) : (
                         <img
                           src={IMG_CDN_URL + item.card.info.imageId}
                           className="image"

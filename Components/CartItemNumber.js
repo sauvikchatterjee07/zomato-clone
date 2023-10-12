@@ -6,7 +6,7 @@ const CartItemNumber = ({ itemNumber }) => {
     <>
       {itemNumber > 0 && (
         <div className="cart-item-number">
-          <span className="count">{itemNumber}</span>
+          <p className="text">{itemNumber}</p>
         </div>
       )}
     </>

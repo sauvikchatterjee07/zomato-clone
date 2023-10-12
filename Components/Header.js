@@ -17,8 +17,10 @@ const Header = () => {
         <ul>
           <Link to="/cart" className="list-items">
             <div className="cart-container">
-              <CartItemNumber itemNumber={cartItems.length} />
-              <li className="list-text">Cart</li>
+              <li className="list-text">
+                <CartItemNumber itemNumber={cartItems.length} />
+                Cart
+              </li>
             </div>
           </Link>
           <Link to="/about" className="list-items">
